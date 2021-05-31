@@ -1,0 +1,1 @@
+export default secret = "mern-stack-development"
