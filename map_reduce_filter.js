@@ -26,10 +26,18 @@ var arr=[1,2,3,4,5,6]
 //     }
 // })
  function isEven(num){
+     let name = "Miodhar"
     if(num%2==0){
+        console.log(name)
         return true
     }else{
+        console.log(name)
         return false
     }
+    console.log(name)
  }
  console.log(arr.filter(isEven))
+
+
+ //var let const
+ 
