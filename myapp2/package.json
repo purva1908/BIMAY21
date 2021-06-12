@@ -1,0 +1,17 @@
+{
+  "name": "expresso",
+  "version": "2.0.0",
+  "description": "A demo project for express application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "nodemon index.js"
+  },
+  "author": "Rahul Kumar(rahul10.pu@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "type": "module"
+}
