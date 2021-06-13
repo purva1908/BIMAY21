@@ -1,19 +1,29 @@
 import express from 'express'
 import userRoutes from "./router/user.js"
 import bodyParser from 'body-parser'
-// var http=require("http")
+import mongoose from 'mongoose'
+var dbURL="mongodb+srv://rahulbimay:rahul@cluster0.bjcnx.mongodb.net/tutorial?retryWrites=true&w=majority"
+mongoose.connect(dbURL,{useNewUrlParser:true, useUnifiedTopology:true})
+        .then((result)=>{
+            console.log("Successfully connected to DB")
+            // console.log(result)
+        })
+        .catch((err)=>{
+
+            console.log("Error occured while connecting to Mongo DB")
+        })
+
+
+
+
 function myFunc(request, response){
     console.log("____________________myFunc function get called_____")
     console.log(request)
-    // response.write("Hello faraz")
-    // response.end()
     response.send("Hello Rahul")
 }
-// http.createServer(myFunc).listen(8080)
-
-// var express=require("express")
 var server=express()
-server.use("/user", userRoutes)
 server.use(bodyParser.json())
+server.use("/user", userRoutes)
+
 server.get("/",myFunc)
-server.listen(8080)
+server.listen(8080, ()=>{console.log("Backend Server started")})
