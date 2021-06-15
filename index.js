@@ -5,7 +5,9 @@ import mongoose from 'mongoose'
 var dbURL="mongodb+srv://rahulbimay:rahul@cluster0.bjcnx.mongodb.net/tutorial?retryWrites=true&w=majority"
 mongoose.connect(dbURL,{useNewUrlParser:true, useUnifiedTopology:true})
         .then((result)=>{
+            //any line of code 
             console.log("Successfully connected to DB")
+            server.listen(8080, ()=>{console.log("Backend Server started")})
             // console.log(result)
         })
         .catch((err)=>{
@@ -26,4 +28,4 @@ server.use(bodyParser.json())
 server.use("/user", userRoutes)
 
 server.get("/",myFunc)
-server.listen(8080, ()=>{console.log("Backend Server started")})
+// server.listen(8080, ()=>{console.log("Backend Server started")})
