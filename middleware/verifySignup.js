@@ -32,6 +32,7 @@ export const checkDuplicateUsernameOrEmail=(req, res, next)=>{
                 res.status(409).send({
                     message:"Email already Exist:    "+result    
                 })
+                return
             }
             //go for next
             next();

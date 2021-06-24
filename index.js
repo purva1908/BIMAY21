@@ -1,5 +1,6 @@
 import express from 'express'
 import userRoutes from "./router/user.js"
+import authRoutes from './router/auth.routes.js'
 import bodyParser from 'body-parser'
 // import mongoose from 'mongoose'
 import db from './model/index.js'
@@ -72,6 +73,6 @@ function myFunc(request, response){
 var server=express()
 server.use(bodyParser.json())
 server.use("/user", userRoutes)
-
+server.use("/auth", authRoutes)
 server.get("/",myFunc)
 // server.listen(8080, ()=>{console.log("Backend Server started")})
